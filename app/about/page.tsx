@@ -1,7 +1,6 @@
 "use client";
 
-
-import React from 'react';
+import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
@@ -37,10 +36,28 @@ const AboutUs: React.FC = () => {
           color: #555;
           font-size: 1rem;
         }
+
+        .organization-architecture {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+        }
+
+        .organization-architecture img {
+          max-width: 100%;
+          border-radius: 8px;
+        }
       `}</style>
 
       <div className="about-container">
         <h1 className="about-title">About Us</h1>
+        <p style={{ fontWeight: "bold" }}>High-Level RSR Organization Architecture</p>
+        <div className="organization-architecture">
+          <img
+            src="/WhatsApp Image 2024-11-27 at 12.58.40_7f7294e3.jpg"
+            alt="High-Level RSR Organization Architecture"
+          />
+        </div>
         <div>
           <h2 className="section-title">Welcome to RSR TECHNOLOGIES</h2>
           <p className="section-text">

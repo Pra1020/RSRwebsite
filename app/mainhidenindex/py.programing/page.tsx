@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-
 const PythonProgrammingPage: React.FC = () => {
   return (
     <div style={styles.container}>

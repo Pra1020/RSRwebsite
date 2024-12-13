@@ -3,7 +3,7 @@ import React from "react";
 
 const CourseList: React.FC = () => {
   const courses = [
-    { id: 1, title: "Python Programming", image: "/course1.jpeg", href: "/mainhidenindex/py.programing" },
+    { id: 1, title: "Python Programming", image: "/course1.jpeg" },
     { id: 2, title: "AI & ML Training", image: "/AI_Logo.png" },
     { id: 3, title: "Cloud Computing", image: "/cloud-computing.jpg" },
     { id: 4, title: "Web Development", image: "/th (1).jpeg" },

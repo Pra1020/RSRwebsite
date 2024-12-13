@@ -100,34 +100,58 @@ const Footer: React.FC = () => {
             <img 
             src="/facebook-logo-1-2.png" 
             alt="Facebook Icon" 
-            style={{ width: "20px", height: "20px", marginRight: "8px" }} 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
              />
             
              </Link>
             </span>
             <span style={styles.socialIcon}>
               <Link href="https://twitter.com" target="_blank" style={{ textDecoration: "none", color: "inherit" }}>
-                X (Twitter)
+              <img 
+            src="/x.webp" 
+            alt="twitter Icon" 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
+             />
               </Link>
             </span>
             <span style={styles.socialIcon}>
               <Link href="https://linkedin.com" target="_blank" style={{ textDecoration: "none", color: "inherit" }}>
-                LinkedIn
+              <img 
+            src="/in.png" 
+            alt="linkedin Icon" 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
+             />
+              
               </Link>
             </span>
             <span style={styles.socialIcon}>
               <Link href="https://youtube.com" target="_blank" style={{ textDecoration: "none", color: "inherit" }}>
-                YouTube
+              <img 
+            src="/youtube.png" 
+            alt="youtube Icon" 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
+             />
+               
               </Link>
             </span>
             <span style={styles.socialIcon}>
               <Link href="https://pinterest.com" target="_blank" style={{ textDecoration: "none", color: "inherit" }}>
-                Pinterest
+              <img 
+            src="/Pinterest-Symbol.png" 
+            alt="pinterest Icon" 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
+             />
+            
               </Link>
             </span>
             <span style={styles.socialIcon}>
               <Link href="https://instagram.com" target="_blank" style={{ textDecoration: "none", color: "inherit" }}>
-                Instagram
+              <img 
+            src="/instagram.png" 
+            alt="instagram Icon" 
+            style={{ width: "40px", height: "40px", marginRight: "8px" }} 
+             />
+              
               </Link>
             </span>
           </div>
@@ -220,12 +244,13 @@ const styles = {
     cursor: "pointer",
   },
   socialIcons: {
-    marginTop: "10px",
+    marginTop: "20px",
   },
   socialIcon: {
     display: "inline-block",
-    marginRight: "10px",
+    marginRight: "20px",
     fontSize: "1.2rem",
+
   },
   form: {
     display: "flex",

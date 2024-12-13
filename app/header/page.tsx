@@ -160,9 +160,11 @@ const Header: React.FC = () => {
         <div className="nav-links">
           <Link href="/courses">COURSES</Link>
           <Link href="/blog">BLOG</Link>
+          <Link href="/attendancesheet">ATTENDANCE</Link>
           <Link href="/contectus">CONTACT</Link>
           <Link href="/inquiry">INQUIRY</Link>
-          <Link href="/signup">LOGIN / SIGNUP</Link>
+          <Link href="/auth/register">SIGNUP</Link>
+          <Link href="/auth/login">SIGNIN</Link>
         </div>
       </nav>
 

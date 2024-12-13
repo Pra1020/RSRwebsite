@@ -1,0 +1,105 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             Int                @id @default(autoincrement())
+  name           String
+  email          String             @unique
+  password       String
+  role           UserRole           @default(USER) // Role-based access
+  createdAt      DateTime           @default(now())
+  courses        CourseEnrollment[]
+  attendance     Attendance[]
+  subscriptions  Subscription[]
+  chatMessages   ChatBoard[]
+  chatbotMessages ChatBotMessage[]  // Relationship with ChatBotMessage
+}
+
+model Course {
+  id          Int                @id @default(autoincrement())
+  title       String
+  description String
+  createdAt   DateTime           @default(now())
+  enrollments CourseEnrollment[]
+  chatMessages ChatBoard[]
+
+  // Add opposite relations for Attendance and Subscription
+  attendance Attendance[]         // Relation field for Attendance
+  subscriptions Subscription[]     // Relation field for Subscription
+}
+
+model CourseEnrollment {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  courseId  Int
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Attendance {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  courseId  Int
+  date      DateTime
+  status    AttendanceStatus
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model Subscription {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  courseId  Int
+  startDate DateTime
+  endDate   DateTime
+  isActive  Boolean  @default(true)
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model ChatBoard {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  courseId  Int
+  message   String
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+  course    Course   @relation(fields: [courseId], references: [id])
+}
+
+model ChatBotMessage {
+  id        Int      @id @default(autoincrement())
+  userId    Int?     // Nullable to allow anonymous users
+  message   String   // The text of the message
+  sender    Sender   // Indicates if the message is from the bot or the user
+  createdAt DateTime @default(now())
+
+  // Relations
+  user      User?    @relation(fields: [userId], references: [id]) // Optional relation to the User model
+}
+
+// Enums for roles and attendance status
+enum UserRole {
+  ADMIN
+  TEACHER
+  USER
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  EXCUSED
+}
+
+// Enum to define message sender
+enum Sender {
+  BOT
+  USER
+}

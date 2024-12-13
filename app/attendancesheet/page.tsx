@@ -15,7 +15,7 @@ const AttendancePage: React.FC = () => {
     { id: '2', name: 'Govardhan', shifts: { Mon: '', Tue: '3p - 11p', Wed: '', Thu: '', Fri: '', Sat: '', Sun: '' } },
   ]);
   const [days] = useState<string[]>(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']);
-  const [isRecognizing, setIsRecognizing] = useState(false);
+  const [, setIsRecognizing] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Load models required for face recognition

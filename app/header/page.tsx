@@ -131,7 +131,7 @@ const Header: React.FC = () => {
       {/* Countdown Timer */}
       <div className="top-bar">
         <div>
-          Season's Best Discount Offer Ends in
+           Season&apos;s Best Discount Offer Ends in
           <span className="timer">
             <span className="timer-box">{String(timeLeft.days).padStart(2, "0")}d</span>
             <span className="timer-box">{String(timeLeft.hours).padStart(2, "0")}h</span>

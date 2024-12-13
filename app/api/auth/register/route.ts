@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ message: 'User created successfully', user });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: 'Error creating user', error: error.message }, { status: 500 });
   }
 }

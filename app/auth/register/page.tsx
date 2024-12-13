@@ -43,7 +43,7 @@ const RegisterPage = () => {
         // Handle error response
         setError(data.message || 'Error registering user');
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred');
     } finally {
       setIsLoading(false);

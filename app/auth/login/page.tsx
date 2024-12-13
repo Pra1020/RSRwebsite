@@ -43,7 +43,7 @@ const LoginPage = () => {
         // Handle error response
         setError(data.message || 'Error logging in');
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred');
     } finally {
       setIsLoading(false);

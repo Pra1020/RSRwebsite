@@ -39,8 +39,16 @@ export async function POST(req: NextRequest) {
       token,
       user: { id: user.id, name: user.name, email: user.email },
     });
-  } catch (error: any) {
-    // Explicitly handle the error object
-    return NextResponse.json({ message: 'Error logging in', error: error.message }, { status: 500 });
+  } catch (error) {
+    // Handle the error object with proper typing
+    if (error instanceof Error) {
+      return NextResponse.json(
+        { message: 'Error logging in', error: error.message },
+        { status: 500 }
+      );
+    }
+
+    // Fallback for unknown error types
+    return NextResponse.json({ message: 'Unexpected error occurred' }, { status: 500 });
   }
 }

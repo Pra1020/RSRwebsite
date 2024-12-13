@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       token,
       user: { id: user.id, name: user.name, email: user.email },
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ message: 'Error logging in', error: error.message }, { status: 500 });
   }
 }

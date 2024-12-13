@@ -42,8 +42,9 @@ const Footer: React.FC = () => {
             </li>
             <li style={styles.listItem}>
               <Link href="/fq&a" style={{ textDecoration: "none", color: "inherit" }}>
-                FAQ's
+                FAQ&apos;s
               </Link>
+
             </li>
           </ul>
         </div>

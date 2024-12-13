@@ -1,8 +1,5 @@
 "use client"
 import { useState } from "react"
-import Link from "next/link";
-// pages/index.tsx
-import React from "react";
 import Layout from "../layout";
 
 

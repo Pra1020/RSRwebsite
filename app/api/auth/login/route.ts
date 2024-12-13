@@ -1,5 +1,3 @@
-// app/api/login/route.ts
-
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/app/lib/prisma';
@@ -31,7 +29,7 @@ export async function POST(req: NextRequest) {
     // Create JWT token
     const token = sign(
       { userId: user.id, email: user.email },
-      process.env.JWT_SECRET!, // Make sure you set this in your .env file
+      process.env.JWT_SECRET!, // Ensure JWT_SECRET is set in your .env file
       { expiresIn: '1h' }
     );
 
@@ -41,7 +39,8 @@ export async function POST(req: NextRequest) {
       token,
       user: { id: user.id, name: user.name, email: user.email },
     });
-  } catch {
+  } catch (error: any) {
+    // Explicitly handle the error object
     return NextResponse.json({ message: 'Error logging in', error: error.message }, { status: 500 });
   }
 }

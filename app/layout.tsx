@@ -2,7 +2,7 @@
 import "./globals.css";
 import Footer from "./footer/page";
 import Header from "./header/page";
-import Link from "next/link";
+
 
 export default function RootLayout({
   children,

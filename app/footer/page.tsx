@@ -250,11 +250,10 @@ const styles = {
     display: "inline-block",
     marginRight: "20px",
     fontSize: "1.2rem",
-
   },
   form: {
     display: "flex",
-    flexDirection: "column" as "column",
+    flexDirection: "column" as const, // Corrected this line
   },
   input: {
     marginBottom: "10px",
@@ -273,13 +272,12 @@ const styles = {
   footerBottom: {
     backgroundColor: "#1a3c5a",
     padding: "10px 20px",
-    textAlign: "center" as "center",
+    textAlign: "center" as const, // Corrected this line
     fontSize: "0.9rem",
   },
   contactInfo: {
     marginTop: "10px",
   },
-  
 };
 
 export default Footer;
